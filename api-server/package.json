@@ -7,7 +7,7 @@
     "init": "ts-node init.ts",
     "init:swc": "ts-node --swc init.ts",
     "server": "ts-node server.ts",
-    "clean": "rm prisma/dev.db; npx prisma migrate dev --name init",
+    "clean": "rm -rf prisma/dev.db prisma/migrations; npx prisma migrate dev --name init",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
