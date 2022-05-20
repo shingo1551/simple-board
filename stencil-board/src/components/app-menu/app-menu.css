@@ -1,0 +1,18 @@
+ul {
+  padding-inline-start: 8px;
+  padding-inline-end: 32px;
+}
+
+li {
+  height: 26px;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  @apply px-1 py-0.5;
+}
+
+li.selected a {
+  @apply text-white bg-blue-500;
+}

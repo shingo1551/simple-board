@@ -1,0 +1,15 @@
+header {
+  @apply bg-[#5851ff] text-white;
+  @apply h-14 flex items-center;
+  @apply shadow-inner;
+}
+
+h1 {
+  @apply text-[1.4rem] font-medium text-white;
+  @apply px-3 py-0;
+}
+
+main {
+  display: flex;
+  @apply py-2.5;
+}

@@ -1,0 +1,8 @@
+:host {
+  display: block;
+}
+
+div.bottom {
+  position: absolute;
+  bottom: 1rem;
+}

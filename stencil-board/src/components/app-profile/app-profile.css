@@ -1,0 +1,7 @@
+:host {
+  display: block;
+}
+
+div {
+  @apply flex flex-col gap-2;
+}

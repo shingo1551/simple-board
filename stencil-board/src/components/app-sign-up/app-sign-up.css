@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+div {
+  @apply flex flex-col gap-2;
+}
+
+/* 
+input {
+}
+
+input.error {
+}
+
+span.error {
+}
+
+button {
+}
+*/
