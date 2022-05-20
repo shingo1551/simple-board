@@ -18,7 +18,7 @@ server.get('/user', async (request, reply) => {
 })
 
 //
-server.listen(8080, async (err, address) => {
+server.listen(8080, '0.0.0.0', async (err, address) => {
   if (err) {
     console.error(err)
     await prisma.$disconnect()
