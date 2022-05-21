@@ -3,6 +3,12 @@
 }
 
 div.bottom {
-  position: absolute;
-  bottom: 1rem;
+  position: sticky;
+  bottom: 0rem;
+  padding: 1rem 0;
+  background-color: white;
+}
+
+textarea {
+  width: 16rem;
 }

@@ -1,4 +1,6 @@
 ul {
+  position: sticky;
+  top: 5rem;
   padding-inline-start: 8px;
   padding-inline-end: 32px;
 }

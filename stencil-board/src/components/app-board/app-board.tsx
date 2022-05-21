@@ -1,13 +1,11 @@
-import { Component, Host, State, h, FunctionalComponent } from '@stencil/core';
+import { Component, State, h, FunctionalComponent } from '@stencil/core';
 import { loading } from '../../shared/utils';
 import { fetchCors } from '../../shared/fetch';
 
 interface Post {
   message: string;
-  updatedAt: string;
-  profile: {
-    name: string;
-  }
+  updatedAt: Date;
+  name: string;
 }
 
 @Component({
@@ -19,24 +17,36 @@ export class AppBoard {
   @State() loading = true;
   @State() posts = [] as Post[];
 
+  div: HTMLDivElement;
   message: HTMLTextAreaElement;
 
   async componentDidLoad() {
-    this.posts = await fetchCors('post', 'get');
+    this.posts = this.cnvPosts(await fetchCors('post', 'get'));
+    this.scroll();
   }
 
   onSend = async () => {
     const body = {
       message: this.message.value,
     }
-    this.posts = await fetchCors('post', 'post', body);
+    this.posts = this.cnvPosts(await fetchCors('post', 'post', body));
     this.message.value = null;
+    this.scroll();
+  }
+
+  cnvPosts = (posts: { message: string; updatedAt: string; profile: { name: string; } }[]) =>
+    posts.map(post => ({ message: post.message, updatedAt: new Date(post.updatedAt), name: post.profile.name }));
+
+  scroll = () => {
+    setTimeout(() => {
+      window.scroll({ top: this.div.clientHeight, behavior: 'smooth' });
+    }, 300);
   }
 
   render() {
     return loading(
       this,
-      <Host>
+      <div ref={el => this.div = el}>
         <h2>Board</h2>
         <div>
           {this.posts.map(post => <Message post={post} />)}
@@ -47,14 +57,14 @@ export class AppBoard {
           </div>
           <button onClick={this.onSend}>Send</button>
         </div>
-      </Host>
+      </div>
     );
   }
 }
 
 const Message: FunctionalComponent<{ post: Post }> = ({ post }) => (
   <div>
-    <p><span>{post.profile.name}</span>{post.updatedAt}</p>
+    <p><span>{post.name}</span> [{post.updatedAt.toLocaleString()}]</p>
     <p>{post.message}</p>
     <hr />
   </div>

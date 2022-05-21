@@ -1,4 +1,6 @@
 header {
+  position: sticky;
+  top: 0;
   @apply bg-[#5851ff] text-white;
   @apply h-14 flex items-center;
   @apply shadow-inner;
