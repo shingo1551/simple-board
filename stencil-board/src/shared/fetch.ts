@@ -30,6 +30,9 @@ export async function fetchCors(url: string, method: string, body = undefined) {
   } as RequestInit;
 
   const res = (await fetch(baseUrl + url, req));
+  if (!res.headers.get('content-type').startsWith('application/json;'))
+    throw await res.text();
+
   const json = await res.json() as { jwt: string; profile: Profile };
   if ('sign-in' === url)
     signIn(json);

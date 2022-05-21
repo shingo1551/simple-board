@@ -3,6 +3,7 @@ import { Component, Host, State, h } from '@stencil/core';
 import { loading } from '../../shared/utils';
 import { push } from '../../shared/router';
 import { fetchCors, signOut } from '../../shared/fetch';
+import { Error } from '../../shared/components';
 
 @Component({
   tag: 'app-sign-in',
@@ -11,6 +12,7 @@ import { fetchCors, signOut } from '../../shared/fetch';
 })
 export class AppSignIn {
   @State() loading = true;
+  @State() error = null;
 
   email: HTMLInputElement;
   passwd: HTMLInputElement;
@@ -25,8 +27,12 @@ export class AppSignIn {
       email: this.email.value,
       passwd: this.passwd.value
     }
-    await fetchCors('sign-in', 'post', body) as { jwt: string };
-    push('board');
+    try {
+      await fetchCors('sign-in', 'post', body) as { jwt: string };
+      push('board');
+    } catch (e) {
+      this.error = e;
+    }
   }
 
   buttonDisabled = () => {
@@ -39,6 +45,7 @@ export class AppSignIn {
       <Host>
         <h2>Sign in</h2>
         <div>
+          <Error>{this.error}</Error>
           <input ref={el => this.email = el} onKeyUp={this.buttonDisabled} placeholder='jane@example.com' />
           <input ref={el => this.passwd = el} onKeyUp={this.buttonDisabled} class='error' type='password' placeholder='password' />
         </div>
@@ -47,5 +54,4 @@ export class AppSignIn {
       </Host>
     );
   }
-
 }

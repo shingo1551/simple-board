@@ -1,7 +1,7 @@
 import { Component, h } from '@stencil/core';
 
 import { state } from '../../shared/fetch';
-import { A } from '../../shared/menu';
+import { A } from '../../shared/components';
 
 @Component({
   tag: 'app-menu',

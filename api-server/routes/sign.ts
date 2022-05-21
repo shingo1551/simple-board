@@ -25,7 +25,6 @@ async function signUp(request: FastifyRequest, reply: FastifyReply) {
       }
     })
   } catch (e) {
-    console.log(e)
     return 'error'
   }
 }
@@ -44,5 +43,5 @@ async function signIn(request: FastifyRequest, reply: FastifyReply) {
       profile: user.profile
     }
   else
-    return { jwt: null }
+    return 'error'
 }

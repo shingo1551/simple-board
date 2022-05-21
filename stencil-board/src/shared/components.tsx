@@ -8,3 +8,6 @@ export const A: FunctionalComponent<{ href: string; onClick?: (e: MouseEvent) =>
       ? <a {...href(props.href)} onClick={props.onClick}>{children}</a>
       : <a {...href(props.href)} >{children}</a>}
   </li>;
+
+export const Error: FunctionalComponent = (_, children) =>
+  children ? <div>{children}</div> : null;
