@@ -10,7 +10,7 @@ function route() {
   server.post('/sign-in', signIn)
 }
 
-route();
+route()
 
 //
 async function signUp(request: FastifyRequest, reply: FastifyReply) {

@@ -9,7 +9,7 @@ function route() {
   server.post('/post', post)
 }
 
-route();
+route()
 
 //
 async function get(request: FastifyRequest, reply: FastifyReply) {

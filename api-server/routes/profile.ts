@@ -9,7 +9,7 @@ function route() {
   server.put('/profile', put)
 }
 
-route();
+route()
 
 //
 async function get(request: FastifyRequest, reply: FastifyReply) {
