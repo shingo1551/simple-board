@@ -1,6 +1,6 @@
 import { Component, Host, State, h } from '@stencil/core';
 import { loading } from '../../shared/utils';
-import { fetchCors, profile } from '../../shared/fetch';
+import { fetchCors, state } from '../../shared/fetch';
 
 @Component({
   tag: 'app-profile',
@@ -9,7 +9,7 @@ import { fetchCors, profile } from '../../shared/fetch';
 })
 export class AppProfile {
   @State() loading = true;
-  @State() profile = profile;
+  @State() profile = state.profile;
 
   name: HTMLInputElement;
   birth: HTMLInputElement;

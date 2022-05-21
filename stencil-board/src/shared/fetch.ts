@@ -1,7 +1,8 @@
 import { createStore } from '@stencil/store';
 
 export const { state } = createStore({
-  isSignIn: false
+  isSignIn: false,
+  profile: {} as Profile
 });
 
 interface Profile {
@@ -13,7 +14,6 @@ interface Profile {
 
 //
 const baseUrl = 'http://localhost:8080/'
-export let profile = {} as Profile;
 let jwt = null;
 
 //
@@ -31,21 +31,23 @@ export async function fetchCors(url: string, method: string, body = undefined) {
 
   const res = (await fetch(baseUrl + url, req));
   const json = await res.json() as { jwt: string; profile: Profile };
-  signIn(json);
+  if ('sign-in' === url)
+    signIn(json);
 
   return json as any;
 }
 
 function signIn(json: { jwt: string; profile: Profile }) {
-  profile = json.profile ? json.profile : {} as Profile;
+  const profile = json.profile ? json.profile : {} as Profile;
   if (json.jwt) {
     jwt = json.jwt;
     state.isSignIn = !!profile;
+    state.profile = profile;
   }
 }
 
 export function signOut() {
   state.isSignIn = false;
-  profile = {} as Profile;
+  state.profile = {} as Profile;
   jwt = null;
 }
