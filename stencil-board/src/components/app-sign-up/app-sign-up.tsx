@@ -1,6 +1,7 @@
 import { Component, Host, State, h } from '@stencil/core';
 
 import { loading } from '../../shared/utils';
+import { push } from '../../shared/router';
 import { fetchCors } from '../../shared/fetch';
 
 @Component({
@@ -25,7 +26,8 @@ export class AppSignUp {
       email: this.email.value,
       passwd: this.passwd1.value
     }
-    await fetchCors('signup', 'post', body);
+    await fetchCors('sign-up', 'post', body);
+    push('sign-in');
   }
 
   onEmail = () => {

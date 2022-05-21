@@ -25,7 +25,7 @@ export class AppSignIn {
       email: this.email.value,
       passwd: this.passwd.value
     }
-    await fetchCors('signin', 'post', body) as { jwt: string };
+    await fetchCors('sign-in', 'post', body) as { jwt: string };
     push('board');
   }
 

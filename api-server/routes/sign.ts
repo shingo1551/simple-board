@@ -6,14 +6,14 @@ import { createJwt } from '../utils/jwt'
 
 //
 function route() {
-  server.post('/signup', signup)
-  server.post('/signin', signin)
+  server.post('/sign-up', signUp)
+  server.post('/sign-in', signIn)
 }
 
 route();
 
 //
-async function signup(request: FastifyRequest, reply: FastifyReply) {
+async function signUp(request: FastifyRequest, reply: FastifyReply) {
   const { email, passwd } = JSON.parse(request.body as string)
 
   try {
@@ -30,7 +30,7 @@ async function signup(request: FastifyRequest, reply: FastifyReply) {
   }
 }
 
-async function signin(request: FastifyRequest, reply: FastifyReply) {
+async function signIn(request: FastifyRequest, reply: FastifyReply) {
   const { email, passwd } = JSON.parse(request.body as string)
 
   const user = await prisma.user.findUnique({
