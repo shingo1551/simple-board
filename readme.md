@@ -19,6 +19,8 @@ $ npx prisma migrate dev --name init
 $ npm run server
 ```
 
+http://localhost:8080/ping
+
 ## stencil-board
 
 [Stencil](https://stenciljs.com/)
