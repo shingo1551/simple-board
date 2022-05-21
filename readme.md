@@ -7,6 +7,8 @@
 
 ## api-server
 
+[fastify](https://www.fastify.io/)
+<br>
 [Prisma](https://www.prisma.io/)
 
 ```
