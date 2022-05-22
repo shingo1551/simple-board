@@ -1,8 +1,9 @@
 // fastify
 import fastify from 'fastify'
-import cors from '@fastify/cors'
-
 export const server = fastify()
+
+// CORS
+import cors from '@fastify/cors'
 server.register(cors)
 
 //prisma

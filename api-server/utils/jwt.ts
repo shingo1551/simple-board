@@ -1,3 +1,4 @@
+// JWT
 import { FastifyRequest } from 'fastify'
 import { createSigner, createVerifier } from 'fast-jwt'
 
