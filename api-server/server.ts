@@ -4,6 +4,8 @@ import { server, prisma } from './utils/server'
 import './routes/sign'
 import './routes/profile'
 import './routes/post'
+
+// for dev
 import './routes/_dev'
 
 // http://localhost:8080/ping
