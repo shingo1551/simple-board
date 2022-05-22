@@ -1,6 +1,7 @@
 import { Component, Host, State, h } from '@stencil/core';
 import { loading } from '../../shared/utils';
-import { fetchCors, state } from '../../shared/fetch';
+import { fetchCors } from '../../shared/fetch';
+import { state } from '../../shared/store';
 
 @Component({
   tag: 'app-profile',

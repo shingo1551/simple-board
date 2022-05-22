@@ -2,7 +2,8 @@ import { Component, Host, State, h } from '@stencil/core';
 
 import { loading } from '../../shared/utils';
 import { push } from '../../shared/router';
-import { fetchCors, signOut } from '../../shared/fetch';
+import { fetchCors } from '../../shared/fetch';
+import { signOut } from '../../shared/store';
 import { Error } from '../../shared/components';
 
 @Component({

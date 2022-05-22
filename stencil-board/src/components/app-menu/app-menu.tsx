@@ -1,6 +1,6 @@
 import { Component, h } from '@stencil/core';
 
-import { state } from '../../shared/fetch';
+import { state } from '../../shared/store';
 import { A } from '../../shared/components';
 
 @Component({
