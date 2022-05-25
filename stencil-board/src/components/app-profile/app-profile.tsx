@@ -16,6 +16,10 @@ export class AppProfile {
   birth: HTMLInputElement;
   phone: HTMLInputElement;
 
+  async componentDidLoad() {
+    this.profile = await fetchCors('profile', 'get');
+  }
+
   onApply = async () => {
     const body = {
       name: this.name.value,
