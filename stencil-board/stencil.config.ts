@@ -15,6 +15,7 @@ export const config: Config = {
       // comment the following line to disable service workers in production
       serviceWorker: null,
       baseUrl: 'https://myapp.local/',
+      prerenderConfig: './prerender.config.ts',
     },
   ],
   plugins: [
