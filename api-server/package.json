@@ -7,6 +7,7 @@
     "init": "ts-node init.ts",
     "init:swc": "ts-node --swc init.ts",
     "server": "ts-node server.ts",
+    "server:swc": "ts-node --swc server.ts",
     "migrate": "npx prisma migrate dev --name init",
     "clean": "rm -rf prisma/dev.db prisma/migrations; npm run migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
