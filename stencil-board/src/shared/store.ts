@@ -29,6 +29,7 @@ export function signOut() {
   state.jwt = null;
   state.isSignIn = false;
   state.profile = {} as Profile;
+  saveStorage();
 }
 
 //

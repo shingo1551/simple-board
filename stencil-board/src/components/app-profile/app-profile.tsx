@@ -2,6 +2,7 @@ import { Component, Host, State, h } from '@stencil/core';
 import { loading } from '../../shared/utils';
 import { fetchCors } from '../../shared/fetch';
 import { state } from '../../shared/store';
+import { push } from '../../shared/router';
 
 @Component({
   tag: 'app-profile',
@@ -17,7 +18,11 @@ export class AppProfile {
   phone: HTMLInputElement;
 
   async componentDidLoad() {
-    this.profile = await fetchCors('profile', 'get');
+    try {
+      this.profile = await fetchCors('profile', 'get');
+    } catch {
+      push('/sign-in');
+    }
   }
 
   onApply = async () => {

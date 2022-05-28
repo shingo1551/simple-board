@@ -1,6 +1,7 @@
 import { Component, State, h, FunctionalComponent } from '@stencil/core';
 import { loading } from '../../shared/utils';
 import { fetchCors } from '../../shared/fetch';
+import { push } from '../../shared/router';
 
 interface Post {
   message: string;
@@ -21,8 +22,12 @@ export class AppBoard {
   message: HTMLTextAreaElement;
 
   async componentDidLoad() {
-    this.posts = this.cnvPosts(await fetchCors('post', 'get'));
-    this.scroll();
+    try {
+      this.posts = this.cnvPosts(await fetchCors('post', 'get'));
+      this.scroll();
+    } catch {
+      push('/sign-in');
+    }
   }
 
   onSend = async () => {
