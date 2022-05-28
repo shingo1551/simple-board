@@ -21,14 +21,18 @@ async function post(request: FastifyRequest, reply: FastifyReply) {
   const user = getUser(request)
   const { message } = JSON.parse(request.body as string)
 
-  // prisma:query BEGIN
-  // prisma:query INSERT INTO `main`.`Post` (`createdAt`, `updatedAt`, `message`, `userId`) VALUES (?,?,?,?) RETURNING id
-  // prisma:query SELECT `main`.`Post`.`id`, `main`.`Post`.`createdAt`, `main`.`Post`.`updatedAt`, `main`.`Post`.`message`, `main`.`Post`.`userId` FROM `main`.`Post` WHERE `main`.`Post`.`id` = ? LIMIT ? OFFSET ?
-  // prisma:query COMMIT
-  await prisma.post.create({
-    data: { userId: user.id, message: message }
-  })
-  return findMany()
+  if (user) {
+    // prisma:query BEGIN
+    // prisma:query INSERT INTO `main`.`Post` (`createdAt`, `updatedAt`, `message`, `userId`) VALUES (?,?,?,?) RETURNING id
+    // prisma:query SELECT `main`.`Post`.`id`, `main`.`Post`.`createdAt`, `main`.`Post`.`updatedAt`, `main`.`Post`.`message`, `main`.`Post`.`userId` FROM `main`.`Post` WHERE `main`.`Post`.`id` = ? LIMIT ? OFFSET ?
+    // prisma:query COMMIT
+    await prisma.post.create({
+      data: { userId: user.id, message: message }
+    })
+    return findMany()
+  } else
+    return "error"
+
 }
 
 async function findMany() {

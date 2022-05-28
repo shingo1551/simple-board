@@ -27,7 +27,7 @@ async function signUp(request: FastifyRequest, reply: FastifyReply) {
         profile: { create: { name: email } }
       }
     })
-  } catch (e) {
+  } catch {
     return 'error'
   }
 }
