@@ -24,7 +24,7 @@ async function get(request: FastifyRequest, reply: FastifyReply) {
 
 async function put(request: FastifyRequest, reply: FastifyReply) {
   const user = getUser(request)
-  const { name, phone } = JSON.parse(request.body as string)
+  const { name, phone, birth } = JSON.parse(request.body as string)
 
   if (user)
     // prisma:query BEGIN
@@ -34,7 +34,7 @@ async function put(request: FastifyRequest, reply: FastifyReply) {
     // prisma:query COMMIT
     return await prisma.profile.update({
       where: { userId: user.id },
-      data: { name: name, phone: phone, birthDay: undefined }
+      data: { name: name, phone: phone, birthDay: birth }
     })
   else
     return "error"

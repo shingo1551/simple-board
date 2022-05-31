@@ -28,6 +28,7 @@ export class AppProfile {
   onApply = async () => {
     const body = {
       name: this.name.value,
+      birth: this.birth.value,
       phone: this.phone.value
     }
     await fetchCors('profile', 'put', body);
@@ -40,7 +41,7 @@ export class AppProfile {
         <h2>Profile</h2>
         <div>
           <input ref={el => this.name = el} value={this.profile.name} placeholder='山田 太郎' />
-          <input ref={el => this.birth = el} type='date' />
+          <input ref={el => this.birth = el} value={this.profile.birthDay} type='date' />
           <input ref={el => this.phone = el} value={this.profile.phone} placeholder='090-123-4567' />
         </div>
         <hr />

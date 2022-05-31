@@ -21,19 +21,19 @@ model Post {
 }
 
 model Profile {
-  id       Int       @id @default(autoincrement())
+  id       Int     @id @default(autoincrement())
   name     String
-  birthDay DateTime?
+  birthDay String?
   phone    String?
-  userId   Int       @unique
-  user     User      @relation(fields: [userId], references: [id])
+  userId   Int     @unique
+  user     User    @relation(fields: [userId], references: [id])
   Post     Post[]
 }
 
 model User {
   id      Int      @id @default(autoincrement())
   email   String   @unique
-  passwd  String
+  passwd  String?
   posts   Post[]
   profile Profile?
 }
