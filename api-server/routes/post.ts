@@ -45,18 +45,6 @@ async function findMany() {
       profile: { select: { name: true } }
     }
   })
-  // [
-  //   {
-  //     "message": "こんにちは",
-  //     "updatedAt": "2022-05-27T09:26:04.777Z",
-  //     "profile": { "name": "太郎" }
-  //   },
-  //   {
-  //     "message": "さようなら",
-  //     "updatedAt": "2022-05-27T09:26:16.034Z",
-  //     "profile": { "name": "太郎" }
-  //   }
-  // ]
 }
 
 route()

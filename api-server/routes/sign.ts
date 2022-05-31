@@ -27,11 +27,6 @@ async function signUp(request: FastifyRequest, reply: FastifyReply) {
         profile: { create: { name: email } }
       }
     })
-    // {
-    //   "id": 6,
-    //   "email": "EMAIL",
-    //   "passwd": "$2b$10$6vl4VumpP3xhLjfJJsC/I.wwifCZI/73Gf4Gcjav9pYXjnMBvIwRG"
-    // }
   } catch {
     return 'error'
   }
@@ -52,16 +47,6 @@ async function signIn(request: FastifyRequest, reply: FastifyReply) {
       jwt: createJwt(user.id, email, user.profile?.name || ''),
       profile: user.profile
     }
-  // {
-  //   "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiZW1haWwiOiIzIiwibmFtZSI6IjMiLCJpYXQiOjE2NTM5Njg2NTZ9.0k0sfLmvkPboTNcusNsV9pqvr7GvkTcbVsVyUWHdyAc",
-  //   "profile": {
-  //     "id": 6,
-  //     "name": "3",
-  //     "birthDay": null,
-  //     "phone": null,
-  //     "userId": 6
-  //   }
-  // }
   else
     return 'error'
 }
