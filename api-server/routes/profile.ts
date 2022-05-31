@@ -18,6 +18,13 @@ async function get(request: FastifyRequest, reply: FastifyReply) {
     return await prisma.profile.findUnique({
       where: { id: user.id }
     })
+  // {
+  //   "id": 6,
+  //   "name": "EMAIL",
+  //   "birthDay": null,
+  //   "phone": null,
+  //   "userId": 6
+  // }
   else
     return "error"
 }
@@ -36,6 +43,13 @@ async function put(request: FastifyRequest, reply: FastifyReply) {
       where: { userId: user.id },
       data: { name: name, phone: phone, birthDay: birth }
     })
+  // {
+  //   "id": 6,
+  //   "name": "EMAIL",
+  //   "birthDay": "2022-05-01",
+  //   "phone": "090-999-1111",
+  //   "userId": 6
+  // }
   else
     return "error"
 }
