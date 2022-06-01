@@ -3,7 +3,6 @@ import { FastifyRequest } from 'fastify'
 import { createSigner, createVerifier } from 'fast-jwt'
 
 const secret = process.env.SECRET
-console.log(secret)
 const signSync = createSigner({ key: secret })
 const verifySync = createVerifier({ key: secret })
 
