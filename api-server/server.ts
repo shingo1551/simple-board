@@ -10,6 +10,7 @@ import './routes/_dev'
 
 // http://localhost:8080/ping
 server.get('/ping', async (request, reply) => {
+  request.log.info('Some info about the current request')
   return 'pong\n'
 })
 

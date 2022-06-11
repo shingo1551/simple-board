@@ -1,6 +1,11 @@
 // fastify
 import fastify from 'fastify'
-export const server = fastify()
+export const server = fastify({
+  logger: {
+    level: 'info',
+    file: 'log/pino.log'
+  }
+})
 
 // CORS
 import cors from '@fastify/cors'
