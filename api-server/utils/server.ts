@@ -1,11 +1,6 @@
 // fastify
 import fastify from 'fastify'
-export const server = fastify({
-  logger: {
-    level: 'info',
-    file: 'log/pino.log'
-  }
-})
+export const server = fastify({ logger: { level: 'info', file: 'log/api.log' } })
 
 // CORS
 import cors from '@fastify/cors'
@@ -26,6 +21,12 @@ server.register(cors, {
 })
 */
 
-//prisma
+// pino for prisma
+import { pino } from 'pino'
+const logger = pino(pino.destination('log/prisma.log'))
+logger.level = 'info'
+
+// prisma
 import { PrismaClient } from '@prisma/client'
-export const prisma = new PrismaClient({ log: ['query', 'info', 'warn', 'error'] })
+export const prisma = new PrismaClient({ log: [{ emit: 'event', level: 'query' }, 'info', 'warn', 'error'] })
+prisma.$on('query', (e) => { logger.info(e) })
