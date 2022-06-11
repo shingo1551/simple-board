@@ -14,7 +14,7 @@ server.get('/ping', async (request, reply) => {
 })
 
 //
-server.listen(8080, '0.0.0.0', async (err, address) => {
+server.listen({ port: 8080, host: '0.0.0.0' }, async (err, address) => {
   if (err) {
     console.error(err)
     await prisma.$disconnect()

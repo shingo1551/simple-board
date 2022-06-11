@@ -19,18 +19,18 @@
     "@swc/core": "^1.2.186",
     "@swc/helpers": "^0.3.13",
     "@types/node": "^17.0.34",
-    "prisma": "^3.14.0",
+    "prisma": "^3.15.0",
     "regenerator-runtime": "^0.13.9",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.4"
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.0"
   },
   "dependencies": {
-    "@fastify/cors": "^7.0.0",
-    "@prisma/client": "^3.14.0",
+    "@fastify/cors": "^8.0.0",
+    "@prisma/client": "^3.15.0",
     "@types/bcrypt": "^5.0.0",
     "bcrypt": "^5.0.1",
     "fast-jwt": "^1.5.4",
-    "fastify": "^3.29.0",
+    "fastify": "^4.0.0",
     "fastify-cors": "^6.1.0"
   }
 }
