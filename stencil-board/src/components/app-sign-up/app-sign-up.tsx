@@ -62,11 +62,11 @@ export class AppSignUp {
         <h2>Sign up</h2>
         <div>
           <Error>{this.error}</Error>
-          <input ref={el => this.email = el} onKeyUp={this.onEmail} placeholder='jane@example.com' />
+          <input ref={el => this.email = el} onInput={this.onEmail} placeholder='jane@example.com' />
           {/* <span class='error'>This field is required.</span> */}
-          <input ref={el => this.passwd1 = el} onKeyUp={this.onPasswd1} class='error' type='password' placeholder='password' />
+          <input ref={el => this.passwd1 = el} onInput={this.onPasswd1} class='error' type='password' placeholder='password' />
           {/* <span class='error'>This field is required.</span> */}
-          <input ref={el => this.passwd2 = el} onKeyUp={this.onPasswd2} type='password' placeholder='password confirm' />
+          <input ref={el => this.passwd2 = el} onInput={this.onPasswd2} type='password' placeholder='password confirm' />
           {/* <span class='error'>This field is required.</span> */}
         </div>
         <hr />
