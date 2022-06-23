@@ -20,6 +20,7 @@ export class AppProfile {
   async componentDidLoad() {
     try {
       this.profile = await fetchCors('profile', 'get');
+      this.loading = false;
     } catch {
       push('/sign-in');
     }
