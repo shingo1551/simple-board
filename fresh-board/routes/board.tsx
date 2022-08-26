@@ -14,7 +14,7 @@ export default function Index(props: PageProps) {
         <title>Fresh Board</title>
       </Head>
       <Common>
-        <h1>Home</h1>
+        <h1>Board</h1>
       </Common>
     </>
   );
