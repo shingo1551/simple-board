@@ -9,16 +9,15 @@ server.register(cors)
 /*
 server.register(cors, {
   origin: '*',
-  allowedHeaders: ['authorization', 'content-type'],
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  credentials: true,
-  exposedHeaders: ['authorization'],
-  maxAge: 13000,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   preflightContinue: false,
-  optionsSuccessStatus: 200,
-  preflight: false,
-  strictPreflight: false
-})
+  optionsSuccessStatus: 204,
+  credentials: false,
+  exposedHeaders: null,
+  allowedHeaders: null,
+  maxAge: null,
+  preflight: true,
+  strictPreflight: true})
 */
 
 // prisma
