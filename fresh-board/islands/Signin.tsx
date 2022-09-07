@@ -20,9 +20,7 @@ export default function Signin() {
     }
     try {
       await fetchCors('sign-in', 'post', body);
-
-      // deno-lint-ignore no-explicit-any
-      (window.location as any) = '/board';
+      location.href = '/board';
     } catch (e) {
       setError(e);
     }
