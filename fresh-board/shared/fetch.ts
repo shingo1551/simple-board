@@ -21,7 +21,8 @@ export async function fetchCors(url: string, method: string, body: any) {
         throw await res.text();
 
     const json = await res.json() as { jwt: string; profile: Profile };
-    if ('signin' === url)
+    console.log(url)
+    if ('sign-in' === url)
         signIn(json);
 
     // deno-lint-ignore no-explicit-any

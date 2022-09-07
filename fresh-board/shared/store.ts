@@ -51,6 +51,7 @@ function saveStorage() {
     isSignIn: value.isSignIn,
   };
   storage.setItem('state', JSON.stringify(o));
+  console.log('saveStorage', o);
 }
 
 //
