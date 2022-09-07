@@ -3,6 +3,8 @@
     "$fresh/": "https://deno.land/x/fresh@1.0.2/",
     "preact": "https://esm.sh/preact@10.10.0",
     "preact/": "https://esm.sh/preact@10.10.0/",
-    "preact-render-to-string": "https://esm.sh/preact-render-to-string@5.2.1?external=preact"
+    "preact-render-to-string": "https://esm.sh/preact-render-to-string@5.2.1?external=preact",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.0.0",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.0"
   }
 }

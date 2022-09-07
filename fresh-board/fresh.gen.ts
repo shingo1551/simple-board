@@ -7,11 +7,12 @@ import * as $1 from "./routes/api/joke.ts";
 import * as $2 from "./routes/board.tsx";
 import * as $3 from "./routes/index.tsx";
 import * as $4 from "./routes/profile.tsx";
-import * as $5 from "./routes/sign-in.tsx";
-import * as $6 from "./routes/sign-up.tsx";
+import * as $5 from "./routes/signin.tsx";
+import * as $6 from "./routes/signup.tsx";
 import * as $$0 from "./islands/Counter.tsx";
 import * as $$1 from "./islands/Menu.tsx";
-import * as $$2 from "./islands/Signup.tsx";
+import * as $$2 from "./islands/Signin.tsx";
+import * as $$3 from "./islands/Signup.tsx";
 
 const manifest = {
   routes: {
@@ -20,13 +21,14 @@ const manifest = {
     "./routes/board.tsx": $2,
     "./routes/index.tsx": $3,
     "./routes/profile.tsx": $4,
-    "./routes/sign-in.tsx": $5,
-    "./routes/sign-up.tsx": $6,
+    "./routes/signin.tsx": $5,
+    "./routes/signup.tsx": $6,
   },
   islands: {
     "./islands/Counter.tsx": $$0,
     "./islands/Menu.tsx": $$1,
-    "./islands/Signup.tsx": $$2,
+    "./islands/Signin.tsx": $$2,
+    "./islands/Signup.tsx": $$3,
   },
   baseUrl: import.meta.url,
 };
