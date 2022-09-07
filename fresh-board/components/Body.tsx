@@ -4,7 +4,7 @@ import { ComponentChildren, h } from "preact";
 
 import Menu from "../islands/Menu.tsx";
 
-export default function Common(props: { children: ComponentChildren }) {
+export default function Body(props: { children: ComponentChildren }) {
   return (
     <div>
       <header>

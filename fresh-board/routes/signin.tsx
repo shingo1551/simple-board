@@ -4,7 +4,7 @@ import { Fragment, h } from "preact";
 import { PageProps } from "$fresh/server.ts";
 
 import Head from '../components/Head.tsx';
-import Common from "../components/Common.tsx";
+import Body from "../components/Body.tsx";
 import Signin from "../islands/Signin.tsx";
 
 export default function Index(props: PageProps) {
@@ -15,9 +15,9 @@ export default function Index(props: PageProps) {
         <title>Fresh Board | Signin</title>
         <link href="/signin.css" rel="stylesheet" />
       </Head>
-      <Common>
+      <Body>
         <Signin />
-      </Common>
+      </Body>
     </>
   );
 }
