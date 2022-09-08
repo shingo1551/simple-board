@@ -27,7 +27,7 @@ export default class Board extends Component<{}, { posts: Post[] }> {
   fetchPost = async (method: string, body: any = undefined) => {
     try {
       this.setState({ posts: this.cnvPosts(await fetchCors('post', method, body)) });
-      scroll();
+      this.scroll();
     } catch (e) {
       location.href = '/signin';
     }
