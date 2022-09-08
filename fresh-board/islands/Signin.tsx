@@ -1,8 +1,9 @@
 /** @jsx h */
-import { ComponentChildren, h } from "preact";
+import { h } from "preact";
 import { useRef, useState } from 'preact/hooks';
 import { IS_BROWSER } from "$fresh/runtime.ts";
 
+import { Error } from '../components/Error.tsx';
 import { fetchCors } from '../shared/fetch.ts';
 
 export default function Signin() {
@@ -38,8 +39,4 @@ export default function Signin() {
       <button onClick={onSignIn} disabled={!IS_BROWSER}>Sign in</button>
     </form>
   );
-}
-
-function Error(props: { children: ComponentChildren }) {
-  return props.children ? <div>{props.children}</div> : null;
 }

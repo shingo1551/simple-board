@@ -12,7 +12,7 @@ export default function Index(props: PageProps) {
     <>
       <Head>
         <meta name="description" content="Welcome to the Fresh Board." />
-        <title>Fresh Board</title>
+        <title>Fresh Board | Board</title>
       </Head>
       <Body>
         <Board />
