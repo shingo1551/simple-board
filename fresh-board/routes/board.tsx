@@ -5,6 +5,7 @@ import { PageProps } from "$fresh/server.ts";
 
 import Head from '../components/Head.tsx';
 import Body from "../components/Body.tsx";
+import Board from '../islands/Board.tsx';
 
 export default function Index(props: PageProps) {
   return (
@@ -14,7 +15,7 @@ export default function Index(props: PageProps) {
         <title>Fresh Board</title>
       </Head>
       <Body>
-        <h1>Board</h1>
+        <Board />
       </Body>
     </>
   );

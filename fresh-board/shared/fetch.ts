@@ -3,7 +3,7 @@ import { Profile, signIn, state } from './store.ts';
 const baseUrl = 'http://localhost:8080/';
 
 // deno-lint-ignore no-explicit-any
-export async function fetchCors(url: string, method: string, body: any) {
+export async function fetchCors(url: string, method: string, body: any = undefined) {
     const jwt = state.value.jwt;
     const headers = jwt ? [['Authorization', 'Bearer ' + jwt]] : undefined;
 

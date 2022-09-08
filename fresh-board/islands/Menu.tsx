@@ -7,6 +7,7 @@ export default function Menu() {
   const onSignOut = (evt: Event) => {
     evt.preventDefault();
     signOut();
+    location.href = '/signin';
   }
 
   const menu1 = () => (
