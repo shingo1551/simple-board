@@ -1,6 +1,6 @@
 import { signal } from "@preact/signals";
 
-const storage = localStorage;
+const storage = sessionStorage;
 
 export const state = signal({
   jwt: null as string | null,

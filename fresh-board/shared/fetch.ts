@@ -21,7 +21,6 @@ export async function fetchCors(url: string, method: string, body: any = undefin
         throw await res.text();
 
     const json = await res.json() as { jwt: string; profile: Profile };
-    console.log(url)
     if ('sign-in' === url)
         signIn(json);
 
