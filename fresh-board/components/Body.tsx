@@ -1,6 +1,4 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
-import { ComponentChildren, h } from "preact";
+import { ComponentChildren } from "preact";
 
 import Menu from "../islands/Menu.tsx";
 

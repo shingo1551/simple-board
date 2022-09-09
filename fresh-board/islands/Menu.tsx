@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
 import A from '../components/A.tsx';
 import { signOut, state } from '../shared/store.ts';
 

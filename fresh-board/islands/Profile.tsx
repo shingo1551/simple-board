@@ -1,5 +1,4 @@
-/** @jsx h */
-import { Component, h } from "preact";
+import { Component } from "preact";
 
 import { state } from '../shared/store.ts';
 import { fetchCors } from '../shared/fetch.ts';

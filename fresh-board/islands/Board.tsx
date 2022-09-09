@@ -1,5 +1,4 @@
-/** @jsx h */
-import { Component, h } from "preact";
+import { Component } from "preact";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { fetchCors } from '../shared/fetch.ts';
 

@@ -1,5 +1,4 @@
-/** @jsx h */
-import { ComponentChildren, h } from "preact";
+import { ComponentChildren } from "preact";
 import { useRef } from 'preact/hooks';
 import { signal } from "@preact/signals";
 

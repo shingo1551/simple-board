@@ -1,6 +1,3 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
-import { Fragment, h } from "preact";
 import { PageProps } from "$fresh/server.ts";
 
 import Head from '../components/Head.tsx';

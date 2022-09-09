@@ -1,5 +1,4 @@
-/** @jsx h */
-import { ComponentChildren, h } from "preact";
+import { ComponentChildren } from "preact";
 import { Head as H } from "$fresh/runtime.ts";
 
 export default function Head(props: { children: ComponentChildren }) {
