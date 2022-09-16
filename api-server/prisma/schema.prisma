@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -16,7 +16,6 @@ model Post {
   updatedAt DateTime @updatedAt
   message   String
   userId    Int
-  user      User     @relation(fields: [userId], references: [id])
   profile   Profile  @relation(fields: [userId], references: [userId])
 }
 
@@ -34,6 +33,5 @@ model User {
   id      Int      @id @default(autoincrement())
   email   String   @unique
   passwd  String?
-  posts   Post[]
   profile Profile?
 }
