@@ -26,7 +26,7 @@ model Profile {
   phone    String?
   userId   Int     @unique
   user     User    @relation(fields: [userId], references: [id])
-  Post     Post[]
+  posts    Post[]
 }
 
 model User {
