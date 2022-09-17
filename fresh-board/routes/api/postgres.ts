@@ -4,7 +4,21 @@ import { HandlerContext } from "$fresh/server.ts";
 import { Client } from "https://deno.land/x/postgres@v0.16.1/mod.ts";
 
 export const handler = async (_req: Request, _ctx: HandlerContext) => {
-  const config = "postgresql://postgres:Hodogaya502@db.uffutgvhycnzromcrulu.supabase.co:5432/postgres"
+  const config = {
+    database: "postgres",
+    hostname: "db.uffutgvhycnzromcrulu.supabase.co",
+    password: "Hodogaya502",
+    port: 5432,
+    user: "postgres",
+    tls: {
+      caCertificates: [
+        await Deno.readTextFile(
+          new URL("../../prod-ca-2021.crt", import.meta.url),
+        ),
+      ],
+      enabled: false,
+    },
+  }
   const client = new Client(config);
 
   await client.connect();
