@@ -5,11 +5,12 @@
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/[name].tsx";
 import * as $1 from "./routes/api/joke.ts";
-import * as $2 from "./routes/board.tsx";
-import * as $3 from "./routes/index.tsx";
-import * as $4 from "./routes/profile.tsx";
-import * as $5 from "./routes/signin.tsx";
-import * as $6 from "./routes/signup.tsx";
+import * as $2 from "./routes/api/postgres.ts";
+import * as $3 from "./routes/board.tsx";
+import * as $4 from "./routes/index.tsx";
+import * as $5 from "./routes/profile.tsx";
+import * as $6 from "./routes/signin.tsx";
+import * as $7 from "./routes/signup.tsx";
 import * as $$0 from "./islands/Board.tsx";
 import * as $$1 from "./islands/Counter.tsx";
 import * as $$2 from "./islands/Menu.tsx";
@@ -21,11 +22,12 @@ const manifest = {
   routes: {
     "./routes/[name].tsx": $0,
     "./routes/api/joke.ts": $1,
-    "./routes/board.tsx": $2,
-    "./routes/index.tsx": $3,
-    "./routes/profile.tsx": $4,
-    "./routes/signin.tsx": $5,
-    "./routes/signup.tsx": $6,
+    "./routes/api/postgres.ts": $2,
+    "./routes/board.tsx": $3,
+    "./routes/index.tsx": $4,
+    "./routes/profile.tsx": $5,
+    "./routes/signin.tsx": $6,
+    "./routes/signup.tsx": $7,
   },
   islands: {
     "./islands/Board.tsx": $$0,
