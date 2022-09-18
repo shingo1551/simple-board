@@ -12,6 +12,7 @@ export default function Menu() {
     <ul class="menu">
       <A href='/signup'>Sign up</A>
       <A href='/signin'>Sign in</A>
+      <A href='/board'>Board</A>
     </ul>
   );
 

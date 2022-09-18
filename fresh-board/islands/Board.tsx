@@ -19,8 +19,8 @@ export default class Board extends Component<{}, { posts: Post[] }> {
     }, 300);
   }
 
-  cnvPosts = (posts: { message: string; updatedAt: string; profile: { name: string; } }[]) =>
-    posts.map(post => ({ message: post.message, updatedAt: new Date(post.updatedAt), name: post.profile.name }));
+  cnvPosts = (posts: { message: string; updatedAt: string; name: string; }[]) =>
+    posts.map(post => ({ ...post, updatedAt: new Date(post.updatedAt) }));
 
   // deno-lint-ignore no-explicit-any
   fetchPost = async (method: string, body: any = undefined) => {
