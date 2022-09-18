@@ -26,3 +26,6 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 dev.db
 dev.db-journal
+
+.env
+.env.ts
