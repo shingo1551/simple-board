@@ -1,9 +1,0 @@
-.profile div {
-  display: flex;
-  flex-direction: column;
-}
-
-.profile input,
-.profile button {
-  margin: 0.5rem;
-}
