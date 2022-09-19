@@ -5,7 +5,7 @@ import { push } from '../../shared/router';
 
 interface Post {
   message: string;
-  updatedAt: Date;
+  createdAt: Date;
   name: string;
 }
 
@@ -39,8 +39,8 @@ export class AppBoard {
     this.scroll();
   }
 
-  cnvPosts = (posts: { message: string; updatedAt: string; profile: { name: string; } }[]) =>
-    posts.map(post => ({ message: post.message, updatedAt: new Date(post.updatedAt), name: post.profile.name }));
+  cnvPosts = (posts: { message: string; createdAt: string; profile: { name: string; } }[]) =>
+    posts.map(post => ({ message: post.message, createdAt: new Date(post.createdAt), name: post.profile.name }));
 
   scroll = () => {
     setTimeout(() => {
@@ -69,7 +69,7 @@ export class AppBoard {
 
 const Message: FunctionalComponent<{ post: Post }> = ({ post }) => (
   <div>
-    <p><span>{post.name}</span> [{post.updatedAt.toLocaleString()}]</p>
+    <p><span>{post.name}</span> [{post.createdAt.toLocaleString()}]</p>
     <p>{post.message}</p>
     <hr />
   </div>

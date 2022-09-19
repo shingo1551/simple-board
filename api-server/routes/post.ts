@@ -40,6 +40,7 @@ async function findMany() {
   // prisma:query SELECT `main`.`Profile`.`id`, `main`.`Profile`.`name`, `main`.`Profile`.`userId` FROM `main`.`Profile` WHERE `main`.`Profile`.`userId` IN (?,?,?) LIMIT ? OFFSET ?
   return await prisma.post.findMany({
     select: {
+      createdAt: true,
       message: true,
       profile: { select: { name: true } }
     }
