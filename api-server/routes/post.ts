@@ -41,7 +41,6 @@ async function findMany() {
   return await prisma.post.findMany({
     select: {
       message: true,
-      updatedAt: true,
       profile: { select: { name: true } }
     }
   })

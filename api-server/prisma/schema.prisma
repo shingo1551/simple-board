@@ -13,7 +13,6 @@ datasource db {
 model post {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
   message   String
   userId    Int
   profile   profile  @relation(fields: [userId], references: [userId])
