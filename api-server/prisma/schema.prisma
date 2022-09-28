@@ -11,25 +11,25 @@ datasource db {
 }
 
 model post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
+  id        BigInt  @id @default(autoincrement())
+  createdAt BigInt
   message   String
-  userId    Int
-  profile   profile  @relation(fields: [userId], references: [userId])
+  userId    BigInt
+  profile   profile @relation(fields: [userId], references: [userId])
 }
 
 model profile {
-  id       Int     @id @default(autoincrement())
+  id       BigInt  @id @default(autoincrement())
   name     String
   birthDay String?
   phone    String?
-  userId   Int     @unique
+  userId   BigInt  @unique
   user     user    @relation(fields: [userId], references: [id])
   posts    post[]
 }
 
 model user {
-  id      Int      @id @default(autoincrement())
+  id      BigInt   @id @default(autoincrement())
   email   String   @unique
   passwd  String?
   profile profile?
