@@ -6,10 +6,10 @@ const secret = process.env.SECRET
 const signSync = createSigner({ key: secret })
 const verifySync = createVerifier({ key: secret })
 
-interface User { id: number, email: string, name: string }
+interface User { id: string, email: string, name: string }
 
-export function createJwt(id: number, email: string, name: string) {
-  return signSync({ id: id, email: email, name: name })
+export function createJwt(id: bigint, email: string, name: string) {
+  return signSync({ id: id.toString(), email: email, name: name })
 }
 
 export function getUser(request: FastifyRequest): User {

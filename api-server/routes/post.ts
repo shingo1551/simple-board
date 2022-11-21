@@ -27,7 +27,7 @@ async function post(request: FastifyRequest, reply: FastifyReply) {
     // prisma:query SELECT `main`.`Post`.`id`, `main`.`Post`.`createdAt`, `main`.`Post`.`updatedAt`, `main`.`Post`.`message`, `main`.`Post`.`userId` FROM `main`.`Post` WHERE `main`.`Post`.`id` = ? LIMIT ? OFFSET ?
     // prisma:query COMMIT
     await prisma.post.create({
-      data: { userId: user.id, message: message }
+      data: { userId: BigInt(user.id), message: message, createdAt: new Date().getTime() }
     })
     return findMany()
   } else

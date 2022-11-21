@@ -11,7 +11,7 @@ function route() {
   server.post('/sign-in', signIn)
 }
 
-async function signUp(request: FastifyRequest, reply: FastifyReply) {
+async function signUp(request: FastifyRequest, _reply: FastifyReply) {
   const { email, passwd } = JSON.parse(request.body as string)
 
   try {
@@ -32,7 +32,7 @@ async function signUp(request: FastifyRequest, reply: FastifyReply) {
   }
 }
 
-async function signIn(request: FastifyRequest, reply: FastifyReply) {
+async function signIn(request: FastifyRequest, _reply: FastifyReply) {
   const { email, passwd } = JSON.parse(request.body as string)
 
   // prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`passwd` FROM `main`.`User` WHERE `main`.`User`.`email` = ? LIMIT ? OFFSET ?
@@ -45,7 +45,7 @@ async function signIn(request: FastifyRequest, reply: FastifyReply) {
   if (user?.passwd && await compare(passwd, user.passwd))
     return {
       jwt: createJwt(user.id, email, user.profile?.name || ''),
-      profile: user.profile
+      profile: { ...user.profile, id: user.id.toString(), userId: undefined }
     }
   else
     return 'error'
